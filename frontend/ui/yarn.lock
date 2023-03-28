@@ -7574,6 +7574,11 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
+react-webrtc@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-webrtc/-/react-webrtc-1.0.0.tgz#8efffe338f341605ff7aec6db229e85e71e08fb7"
+  integrity sha512-lhh1Ivwe9pRm7D5+02Bn2VM/YmtQeblDb+R+iikYvZ9uU64fbVL5Y6pVQiJSuNzPW/6OooXwIXCP1zs9//wn9Q==
+
 react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
