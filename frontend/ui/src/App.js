@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import PresetFeed from "./components/presetFeed/PresetFeed";
-import WaitingForPairing from "./waitingForPairing/WaitingForPairing";
+import ReactDOM from 'react-dom';
+import { Provider } from "react-redux";
+import { BrowserRouter } from 'react-router-dom';
+import registerServiceWorker from './registerServiceWorker';
+import { history} from './main/history';
+import store from './main/store';
+import App from './main/app';
 
-function App() {
-  const user = null;
-  const [waiting, setWaiting] = useState(false);
-  return (
-    <div className="container">
-      <PresetFeed setWaiting={setWaiting} />
-      {waiting && <WaitingForPairing />}
-    </div>
-  );
-}
 
-export default App;
+const app = (
+  <Provider store={store}>
+  <BrowserRouter history={history}>
+    <App />
+  </BrowserRouter>
+  </Provider>
+);
