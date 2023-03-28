@@ -1,0 +1,10 @@
+FROM node:18.15.0 as builder
+
+RUN mkdir /app
+WORKDIR /ngapp
+
+RUN yarn
+
+VOLUME [ "/app" ]
+CMD [ "yarn", "start" ]
+

@@ -1,0 +1,46 @@
+#should be in polyglot folder 
+version: "3"
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongodb:/data/db
+  # aerospike:
+  #   ports: 
+  #       - 3000-3002:3000-3002
+  #   image: aerospike:ee-6.1.0.3
+  #   volumes:
+  #     - ./data/aerospike:/opt/aerospike/data
+  #   environment:
+  #     - NAMESPACE=haparlament
+  backend:
+    container_name: backend
+    image: me-west1-docker.pkg.dev/haparlament/haparlament-repo/backend:local
+    build: 
+      context: backend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./backend/src:/app"
+  ui:
+    image: me-west1-docker.pkg.dev/haparlament/haparlament-repo/ui:local
+    build: 
+      context: web-polyglottv
+      dockerfile: Dockerfile.develop
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./frontend/ui:/app"
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    volumes:
+      - ./conf/nginx/develop.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8000:8000
+
+  

@@ -1,0 +1,8 @@
+FROM golang:1.18.10-bullseye AS builder
+
+RUN mkdir /app
+WORKDIR /app
+
+VOLUME [ "/app" ]
+
+CMD [ "go", "run", "main.go"]

@@ -19,3 +19,6 @@
 /ui/node_modules/
 /go.sum
 /deploy/haparlament
+/node_modules/
+funtend/ui/node_modules/
+data/
