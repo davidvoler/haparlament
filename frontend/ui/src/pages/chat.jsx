@@ -141,4 +141,4 @@ const Chat = React.createClass({
     }
 });
 
-React.render(<Chat APIKey='sdysmxpiv1iz4cxr' />, document.body);
+export default Chat;

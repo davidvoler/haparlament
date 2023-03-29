@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
 import { BrowserRouter } from 'react-router-dom';
-import registerServiceWorker from './registerServiceWorker';
 import { history} from './main/history';
 import store from './main/store';
 import App from './main/app';
